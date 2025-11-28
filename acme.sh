@@ -172,10 +172,12 @@ rm -rf /root/ygkkkca
 rm -rf ~/.acme.sh acme.sh
 uncronac
 red "遗憾，域名证书申请失败，建议如下："
-yellow "一、更换下二级域名自定义名称再尝试执行重装脚本（重要）"
+yellow "1、如果解析到的IP是104.2开头的或者172开头的IP，请确保CF中的CDN黄云已关闭，解析的IP必须是VPS的本地IP"
+echo
+yellow "2、更换下二级域名自定义名称再尝试执行重装脚本（重要）"
 green "例：原二级域名 x.ygkkk.eu.org 或 x.ygkkk.cf ，在cloudflare中重命名其中的x名称"
 echo
-yellow "二：因为同个本地IP连续多次申请证书有时间限制，等一段时间再重装脚本" && exit
+yellow "3、因为同个本地IP连续多次申请证书有时间限制，等一段时间再重装脚本" && exit
 fi
 }
 
